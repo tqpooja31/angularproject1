@@ -1,0 +1,65 @@
+<div class="container">
+    <h2>Add Student</h2>
+  <form class="form-horizontal" [formGroup]="Studentform" novalidate>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="pass">Student id:<span class="t">*</span></label> 
+        <div class="col-sm-8">
+        <input type="text" class="form-control" formControlName="sid" placeholder="sid"> <br>
+        <div class="alert alert-danger" *ngIf="Studentform.controls['sid'].invalid && Studentform.controls['sid'].touched">
+        <div *ngIf="Studentform.controls['sid'].errors.required">id is Required</div>      
+        </div>
+    </div>
+       
+    
+   
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="name"> Student Name:<span class="t">*</span></label>
+    <div class="col-sm-8">
+    <input type="text" class="form-control" formControlName="sname" placeholder="name"> <br>
+    <div  class="alert alert-danger" *ngIf="Studentform.controls['sname'].invalid && Studentform.controls['sname'].touched">
+    <div *ngIf="Studentform.controls['sname'].errors.required">Name is Required</div>
+    <div *ngIf="Studentform.controls['sname'].errors.pattern">pattern should not be match</div>         
+
+    </div>
+    </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Email:<span class="t">*</span></label>
+        <div class="col-sm-8"> 
+        <input type="text" class="form-control" formControlName="email" placeholder="Email id"> <br>
+        <div class="alert alert-danger" *ngIf="Studentform.controls['email'].invalid && Studentform.controls['email'].touched">
+        <div *ngIf="Studentform.controls['email'].errors.required">Email is Required</div>
+        <div *ngIf="Studentform.controls['email'].errors.pattern">Email must be a valid email address</div>        
+        </div>
+        </div>
+        </div>
+  
+    
+
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="mobile">Mobile:</label> 
+    <div class="col-sm-8">
+    <input type="number" class="form-control" formControlName="smobno" placeholder="mobile number"> 
+    <div class="alert alert-danger" *ngIf="Studentform.controls['smobno'].invalid && Studentform.controls['smobno'].touched">
+    <div *ngIf="Studentformlibraryform.controls['smobno'].errors.required">Mobile number is Required</div>
+    <div *ngIf="Studentform.controls['smobno'].errors.minlength">Mobile number should be 10 digit</div>
+    <!-- <div *ngIf="libraryform.controls['mobno'].errors.pattern">Mobile number pattern should not be match</div> -->
+
+    </div> 
+    </div>
+    </div>
+    
+         <button type="submit" class="btn btn-primary" (click)="addlib()" value="Submit"  [disabled]="Studentform.invalid">Add</button>
+    
+
+  
+
+  
+  <!-- <br>
+  <h1>{{librarian | json}}</h1>
+  {{libraryform.value | json}}
+  <br> -->
+  </div>
+

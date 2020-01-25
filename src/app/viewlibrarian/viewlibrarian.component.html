@@ -1,0 +1,38 @@
+
+<div class="container">
+    
+<h1 class="text-center"> 
+   View Data</h1>
+   
+   <div class="scroll">
+       
+      <table class="table table-bordered">
+     <tr>
+         <th>id</th>
+         <th>Name</th>
+         <th>Email</th>
+         <th>Password</th>
+         <th>Mobno</th>
+         <th> Action </th>
+     </tr>
+     <tbody>
+        
+           <tr *ngFor="let s of lib;let i=index">
+                <td>{{s.id}}</td>
+                <td>{{s.name}}</td>
+                 <td>{{s.email}}</td>
+                 <td>{{s.password}}</td>
+                  <td>{{s.mobno}}</td>
+                 <td>
+                     <button input type="text" class="btn btn-dark" ><a [routerLink]="['/update',i]">Edit</a></button>&nbsp;
+                     <button input type="text" class="btn btn-danger" (click)="deleteData(i)">Delete</button>
+                     </td>
+            </tr>
+        
+        </tbody>
+     </table>
+    </div>
+
+<!-- hii
+
+{{lib | json}} -->

@@ -1,0 +1,31 @@
+
+<div class="container">
+    
+    <h1 class="text-center" style=color:rgba(12,192,247,0.986)> 
+       View Data</h1>
+          <table class="table table-bordered" >
+         <tr >
+        
+             <th>callno</th>
+             <th>Bname</th>
+             <th>Author</th>
+             <th>Publisher</th>
+             <th>Quantity</th>
+             <th>Issue</th>
+             <th> Action </th>
+         </tr>
+               <tr *ngFor="let s of book;let i=index">
+                    
+                    <td>{{s.callno}}</td>
+                    <td>{{s.bname}}</td>
+                     <td>{{s.author}}</td>
+                     <td>{{s.publisher}}</td>
+                      <td>{{s.quantity}}</td>
+                      <td>{{s.issued}}</td>
+
+                     <td>
+                          <button input type="text" class="btn btn-light" ><a [routerLink]="['/edit',i]">Edit</a></button>&nbsp; 
+                         <button input type="text" class="btn btn-danger" (click)="deleteData(i)">Delete</button>
+                         </td>
+                </tr>
+         </table>

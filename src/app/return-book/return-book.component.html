@@ -1,0 +1,24 @@
+<div class="container">
+  <h2 style=color:maroon>Return Form</h2>
+  <form #frm="ngForm">
+
+    <div class="form-group">
+      <label>Student id:<span class=t>*</span></label>
+      <input type="number" class="form-control" #pass="ngModel" ngModel name="studid" (keydown)="down($event.target.value)">
+      <div class="alert alert-danger" *ngIf="pass.invalid && pass.touched">
+      <div *ngIf="pass.errors.required">id is Required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Column no:<span class=t>*</span></label>
+      <select class="form-control" (change)="sel($event.target.value)">
+        <option *ngFor="let x of temp">{{x}}</option>
+      </select>
+    </div>
+
+    <input type="button" class="btn btn-primary" (click)="Returnbook(frm.value)" value="Return Book"
+      [disabled]="frm.invalid">
+
+  </form>
+</div>

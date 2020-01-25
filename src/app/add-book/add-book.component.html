@@ -1,0 +1,90 @@
+<!-- <style>
+  label{
+    color:whitesmoke;
+  }
+</style> -->
+ <div class="container">
+  <h2 style="color:palegreen;">Add Book Form</h2>
+<form class="form-horizontal" [formGroup]="libraryform" novalidate>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="callno" >Column No:<span class="t">*</span></label>
+    <div class="col-sm-8"> 
+    <select  class="form-control" formControlName="callno" placeholder="column no"> 
+      <option value="A-1">A-1</option>
+      <option value="B-2">B-2</option>
+      <option value="C-3">C-3</option>
+      <option value="D-4">D-4</option>
+      <option value="E-1">E-1</option>
+      </select>
+  </div>
+</div>
+
+
+  <div class="form-group">
+      <label class="control-label col-sm-2" for="bname" >Book_Name:<span class="t">*</span></label>
+      <div class="col-sm-8"> 
+      <input type="text" class="form-control" formControlName="bname" placeholder="book name"> <br>
+      <div class="alert alert-danger" *ngIf="libraryform.controls['bname'].invalid && libraryform.controls['bname'].touched">
+      <div *ngIf="libraryform.controls['bname'].errors.required">name is Required</div>
+      <div *ngIf="libraryform.controls['bname'].errors.maxlength">name should be minimum of 10 letters</div>    
+      </div>
+      </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="Author" >Author:<span class="t">*</span></label>
+        <div class="col-sm-8"> 
+        <input type="text" class="form-control" formControlName="author" placeholder="Author name"> <br>
+        <div class="alert alert-danger" *ngIf="libraryform.controls['author'].invalid && libraryform.controls['author'].touched">
+        <div *ngIf="libraryform.controls['author'].errors.required">name is Required</div>
+        <div *ngIf="libraryform.controls['author'].errors.maxlength">name should be minimum of 10 letters</div>    
+        </div>
+        </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="publisher" >Publisher:</label>
+          <div class="col-sm-8"> 
+          <input type="text" class="form-control" formControlName="publisher" placeholder="publisher name"> <br>
+          <div class="alert alert-danger" *ngIf="libraryform.controls['publisher'].invalid && libraryform.controls['publisher'].touched">
+          <div *ngIf="libraryform.controls['publisher'].errors.required">name is Required</div>
+          <div *ngIf="libraryform.controls['publisher'].errors.maxlength">name should be minimum of 10 letters</div>    
+          </div>
+          </div>
+          </div>
+
+  <div class="form-group">
+  <label class="control-label col-sm-2" for="quantity" >Quantity:<span class="t">*</span></label> 
+  <div class="col-sm-8">
+  <input type="number" class="form-control" formControlName="quantity" placeholder="quantity"> <br>
+  <div class="alert alert-danger" *ngIf="libraryform.controls['quantity'].invalid && libraryform.controls['quantity'].touched">
+  <div *ngIf="libraryform.controls['quantity'].errors.required">quantity is Required</div>
+      
+  </div>
+  </div>
+  </div>
+
+
+   <!-- <div class="form-group"> -->
+  <!-- <label class="control-label col-sm-2" for="issue">Issue:</label>  -->
+  <!-- <div class="col-sm-8"> -->
+  <!-- <input type="number" class="form-control" formControlName="issue" placeholder="issue">  -->
+  <!-- <div class="alert alert-danger" *ngIf="libraryform.controls['issue'].invalid && libraryform.controls['issue'].touched"> -->
+  <!-- <div *ngIf="libraryform.controls['issue'].errors.required">issue number is Required</div> -->
+  
+  <!-- <div *ngIf="libraryform.controls['mobno'].errors.pattern">Mobile number pattern should not be match</div> -->
+
+  <!-- </div>  -->
+  <!-- </div> -->
+  <!-- </div> -->
+  
+  <button type="submit" class="btn btn-primary" (click)="addbook()" value="Submit"  [disabled]="libraryform.invalid">Submit</button>
+  
+</form>
+
+<!-- <br>
+<h1>{{librarian | json}}</h1>
+{{libraryform.value | json}}
+<br> -->
+</div>

@@ -1,0 +1,53 @@
+<div class="container"> 
+    <h2>Update Form</h2> 
+<form #frm="ngForm">
+ <div class="form-group">
+
+    <div class="form-group">
+        <label>Student id</label>
+             <input type= "number" class="form-control" #pass="ngModel" [(ngModel)]="list.sid" name="sid"
+                required >
+              <div class="alert alert-danger" *ngIf="pass.invalid && pass.touched">
+                 <div *ngIf="pass.errors.required">no is Required</div>
+                
+             </div>
+           </div> 
+
+   <label>Name</label>
+       <input type= "text" class="form-control" #nm="ngModel" [(ngModel)]="list.sname" name="sname"
+        required    >
+     <!-- pattern="[A-Za-z]{1,32}" -->
+     <div class="alert alert-danger" *ngIf="nm.invalid && nm.touched">
+         <div *ngIf="nm.errors.required">First Name is Required</div>
+          <!-- <div *ngIf="nm.errors.pattern">pattern should not be match</div>   -->
+    </div>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+          <input type= "email" class="form-control" #nm="ngModel" [(ngModel)]="list.email" name="email" required
+           minlength="5" maxlength="15">
+        <div class="alert alert-danger" *ngIf="nm.invalid && nm.touched">
+            <div *ngIf="nm.errors.required">email is Required</div>
+            <div *ngIf="nm.errors.minlength">Name should be minimum of 10 letters</div>
+       </div>
+       </div>
+
+
+     <div class="form-group">
+      <label>Mob no</label>
+           <input type= "number" class="form-control" #pass="ngModel" [(ngModel)]="list.smobno" name="smobno"
+             required minlength="10">
+            <div class="alert alert-danger" *ngIf="pass.invalid && pass.touched">
+               <div *ngIf="pass.errors.required">mobno is Required</div>
+                <div *ngIf="pass.errors.minlength">mobno should be minimum of 10 letters</div>
+           </div>
+         </div> 
+    
+
+         <button type="submit" class="btn btn-primary" (click)="addlib()" value="Submit"  [disabled]="frm.invalid">Update</button>
+
+    </form>
+  </div>
+
+

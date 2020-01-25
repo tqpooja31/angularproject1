@@ -1,0 +1,22 @@
+
+<div class="hero-image">
+       
+<h2 style="text-align:center">Admin Section</h2>
+<nav class="navbar navbar-expand-sn invaerse navbar-dark">
+    <ul class="nav nav-tabs">
+            <li routerLinkActive="active"><a class="nav-link" routerLink="home">Add Librarian</a></li>
+            <li routerLinkActive="active"><a class="nav-link" routerLink="view">View Librarian</a></li>
+            <li routerLinkActive="active"><a class="nav-link" routerLink="stud">AddStudent</a></li>
+            <li routerLinkActive="active"><a class="nav-link" routerLink="vwst">ViewStudent</a></li>
+            <li routerLinkActive="active"><a class="nav-link" routerLink="adbk">AddBook</a></li>
+            <li routerLinkActive="active"><a class="nav-link" routerLink="vwbk">ViewBook</a></li>
+            <li routerLinkActive="active"><a class="nav-link" routerLink="isbk">IssueBook</a></li>
+            <li routerLinkActive="active"><a class="nav-link" routerLink="vwisbk">ViewIssueBook</a></li>
+            <li routerLinkActive="active"><a class="nav-link" routerLink="rebk">ReturnBook</a></li>
+            <li routerLinkActive="active"><a class="nav-link" (click)="goback()">LogOut</a></li>
+    </ul>
+</nav>
+      
+                <router-outlet></router-outlet>
+        
+</div>

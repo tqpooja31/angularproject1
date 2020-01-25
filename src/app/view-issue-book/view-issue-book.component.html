@@ -1,0 +1,27 @@
+
+<div class="container">
+    
+    <h1 class="text-center" style=color:cornflowerblue> View Data</h1>
+          <table class="table table-bordered">
+         <tr>
+             <th>column no</th>
+             <th>student id</th>
+             <th>student name</th>
+             <th>mob no</th>
+             <th>issue date</th>
+             <th>return status</th>
+
+             <!-- <th> Action </th> -->
+         </tr>
+               <tr *ngFor="let s of Ilib;let i=index">
+                    <td>{{s.callno}}</td>
+                    <td>{{s.studid}}</td>
+                    <td>{{s.sname}}</td>
+                     <td>{{s.smobno}}</td>
+                     <td>{{s.issuedate}}</td>
+                      <td>{{s.returnstatus}}</td>
+                     <!-- <td>
+                         <button input type="text" class="btn btn-success" ><a [routerLink]="['/update',i]">Edit</a></button>&nbsp;
+                         <button input type="text" class="btn btn-danger" (click)="deleteData(i)">Delete</button> </td> -->
+                </tr>
+         </table>

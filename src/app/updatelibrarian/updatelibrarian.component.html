@@ -1,0 +1,109 @@
+<!-- <div class="container">
+    <h2>Update Librarian</h2>
+  <form class="form-horizontal" [formGroup]="libraryform" novalidate>
+   
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="name">Name:</label>
+    <div class="col-sm-8">
+    <input type="text" class="form-control" formControlName="name" placeholder="name" [(ngModel)]="list.name"> <br>
+    <div  class="alert alert-danger" *ngIf="libraryform.controls['name'].invalid && libraryform.controls['name'].touched">
+    <div *ngIf="libraryform.controls['name'].errors.required">Name is Required</div>
+    <div *ngIf="libraryform.controls['name'].errors.minlength">Name should be minimum of 3 letters</div> 
+    //<div *ngIf="libraryform.controls['name'].errors.pattern">pattern should not be match</div>         
+
+    </div>
+    </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Email:</label>
+        <div class="col-sm-8"> 
+        <input type="text" class="form-control" formControlName="email" placeholder="Email id" [(ngModel)]="list.email"> <br>
+        <div class="alert alert-danger" *ngIf="libraryform.controls['email'].invalid && libraryform.controls['email'].touched">
+        <div *ngIf="libraryform.controls['email'].errors.required">Email is Required</div>
+        <div *ngIf="libraryform.controls['email'].errors.pattern">Email must be a valid email address</div>        
+        </div>
+        </div>
+        </div>
+  
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="pass">Password:</label> 
+    <div class="col-sm-8">
+    <input type="password" class="form-control" formControlName="password" placeholder="Password" [(ngModel)]="list.password"> <br>
+    <div class="alert alert-danger" *ngIf="libraryform.controls['password'].invalid && libraryform.controls['password'].touched">
+    <div *ngIf="libraryform.controls['password'].errors.required">Password is Required</div>
+    <div *ngIf="libraryform.controls['password'].errors.minlength">Password should be minimum of 8 letters</div>        
+    </div>
+    </div>
+    </div>
+
+
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="mobile">Mobile:</label> 
+    <div class="col-sm-8">
+    <input type="number" class="form-control" formControlName="mobno" placeholder="mobile number" [(ngModel)]="list.mobno"> 
+    <div class="alert alert-danger" *ngIf="libraryform.controls['mobno'].invalid && libraryform.controls['mobno'].touched">
+    <div *ngIf="libraryform.controls['mobno'].errors.required">Mobile number is Required</div>
+    <div *ngIf="libraryform.controls['mobno'].errors.minlength">Mobile number should be 10 digit</div>
+    // <div *ngIf="libraryform.controls['mobno'].errors.pattern">Mobile number pattern should not be match</div>
+
+    </div> 
+    </div>
+    </div>
+    
+         <button type="submit" class="btn btn-primary" (click)="addlib()" value="Submit"  [disabled]="libraryform.invalid">Update</button>
+    
+
+  </form> -->
+  <div class="container"> 
+    <h2>Update Form</h2> 
+<form #frm="ngForm">
+ <div class="form-group">
+   <label>Name</label>
+       <input type= "text" class="form-control" #nm="ngModel" [(ngModel)]="list.name" name="name"
+        required  >
+     <!-- pattern="[A-Za-z]{1,32}" -->
+     <!-- pattern="^[a-zA-Z \-\']+"  -->
+     <div class="alert alert-danger" *ngIf="nm.invalid && nm.touched">
+         <div *ngIf="nm.errors.required">First Name is Required</div>
+          <!-- <div *ngIf="nm.errors.pattern">pattern should not be match</div>   -->
+    </div>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+          <input type= "email" class="form-control" #nm="ngModel" [(ngModel)]="list.email" name="email" required
+           minlength="5" maxlength="15">
+        <div class="alert alert-danger" *ngIf="nm.invalid && nm.touched">
+            <div *ngIf="nm.errors.required">email is Required</div>
+            <div *ngIf="nm.errors.minlength">Name should be minimum of 5 letters</div>
+       </div>
+       </div>
+
+
+<div class="form-group">
+  <label>Password</label>
+       <input type= "password" class="form-control" #pass="ngModel" [(ngModel)]="list.password" name="password"
+          required minlength="8">
+        <div class="alert alert-danger" *ngIf="pass.invalid && pass.touched">
+           <div *ngIf="pass.errors.required">Password is Required</div>
+            <div *ngIf="pass.errors.minlength">Password should be minimum of 8 letters</div>
+       </div>
+     </div> 
+
+     <div class="form-group">
+      <label>Mob no</label>
+           <input type= "number" class="form-control" #pass="ngModel" [(ngModel)]="list.mobno" name="mobno"
+             required minlength="10">
+            <div class="alert alert-danger" *ngIf="pass.invalid && pass.touched">
+               <div *ngIf="pass.errors.required">mobno is Required</div>
+                <div *ngIf="pass.errors.minlength">Password should be minimum of 10 letters</div>
+           </div>
+         </div> 
+    
+
+         <button type="submit" class="btn btn-primary" (click)="addlib()" value="Submit"  >Update</button>
+         <!-- [disabled]="frm.invalid" -->
+    </form>
+  </div>
+

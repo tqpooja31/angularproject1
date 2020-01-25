@@ -1,0 +1,66 @@
+<div class="container">
+    <h2>Add Librarian</h2>
+  <form class="form-horizontal" [formGroup]="libraryform" novalidate>
+   
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="name">Name:<span class="t">*</span></label>
+    <div class="col-sm-8">
+    <input type="text" class="form-control" formControlName="name" placeholder="name" > <br>
+    <div  class="alert alert-danger" *ngIf="libraryform.controls['name'].invalid && libraryform.controls['name'].touched">
+    <div *ngIf="libraryform.controls['name'].errors.required">Name is Required</div>
+    <div *ngIf="libraryform.controls['name'].errors.pattern">pattern should not be match</div>         
+
+    </div>
+    </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Email:<span class="t">*</span></label>
+        <div class="col-sm-8"> 
+        <input type="text" class="form-control" formControlName="email" placeholder="Email id"> <br>
+        <div class="alert alert-danger" *ngIf="libraryform.controls['email'].invalid && libraryform.controls['email'].touched">
+        <div *ngIf="libraryform.controls['email'].errors.required">Email is Required</div>
+        <div *ngIf="libraryform.controls['email'].errors.pattern">Email must be a valid email address</div>        
+        </div>
+        </div>
+        </div>
+  
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="pass">Password:<span class="t">*</span></label> 
+    <div class="col-sm-8">
+    <input type="password" class="form-control" formControlName="password" placeholder="Password"> <br>
+    <div class="alert alert-danger" *ngIf="libraryform.controls['password'].invalid && libraryform.controls['password'].touched">
+    <div *ngIf="libraryform.controls['password'].errors.required">Password is Required</div>
+    <div *ngIf="libraryform.controls['password'].errors.minlength">minimum length should be 8</div>   
+    <div *ngIf="libraryform.controls['password'].errors.pattern">Pattern should be not match</div>  
+          
+    </div>
+    </div>
+    </div>
+
+
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="mobile">Mobile:</label> 
+    <div class="col-sm-8">
+    <input type="text" class="form-control" formControlName="mobno" placeholder="mobile number" (keypress)="keyPress($event)"> 
+    <div class="alert alert-danger" *ngIf="libraryform.controls['mobno'].invalid && libraryform.controls['mobno'].touched">
+    <div *ngIf="libraryform.controls['mobno'].errors.required">Mobile number is Required</div>
+    <div *ngIf="libraryform.controls['mobno'].errors.minlength">Mobile number should be 10 digit</div>
+    <div *ngIf="libraryform.controls['mobno'].errors.maxlength">Mobile number should be 10 digit</div>
+    
+                       
+    </div> 
+    </div>
+    </div>
+    
+         <button type="submit" class="btn btn-primary" (click)="addlib()" value="Submit"  [disabled]="libraryform.invalid">Submit</button>
+    
+
+  </form>
+
+  
+  <!-- <br>
+  <h1>{{librarian | json}}</h1>
+  {{libraryform.value | json}}
+  <br> -->
+  </div>

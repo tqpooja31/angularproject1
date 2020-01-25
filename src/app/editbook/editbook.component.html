@@ -1,0 +1,69 @@
+<div class="container"> 
+    <h2>Update Form</h2> 
+<form #frm="ngForm">
+ <div class="form-group">
+   <label>column no</label>
+       <input type= "text" class="form-control" #nm="ngModel" [(ngModel)]="list.callno" name="callno">
+     <div class="alert alert-danger" *ngIf="nm.invalid && nm.touched">
+         <div *ngIf="nm.errors.required">no is Required</div>
+        
+    </div>
+    </div>
+
+    <div class="form-group">
+      <label>Bname</label>
+          <input type= "text" class="form-control" #nm="ngModel" [(ngModel)]="list.bname" name="bname" required minlength="5" maxlength="15">
+        <div class="alert alert-danger" *ngIf="nm.invalid && nm.touched">
+            <div *ngIf="nm.errors.required">name is Required</div>
+            <div *ngIf="nm.errors.minlength">Name should be minimum of 5 letters</div>
+       </div>
+       </div>
+
+       <div class="form-group">
+        <label>Author</label>
+            <input type= "text" class="form-control" #nm="ngModel" [(ngModel)]="list.author" name="author" required minlength="5" maxlength="15">
+          <div class="alert alert-danger" *ngIf="nm.invalid && nm.touched">
+              <div *ngIf="nm.errors.required">name is Required</div>
+              <div *ngIf="nm.errors.minlength">Name should be minimum of 5 letters</div>
+         </div>
+         </div>
+
+         <div class="form-group">
+            <label>Publisher</label>
+                <input type= "text" class="form-control" #nm="ngModel" [(ngModel)]="list.publisher" name="publisher" required minlength="5" maxlength="15">
+              <div class="alert alert-danger" *ngIf="nm.invalid && nm.touched">
+                  <div *ngIf="nm.errors.required">name is Required</div>
+                  <div *ngIf="nm.errors.minlength">Name should be minimum of 5 letters</div>
+             </div>
+             </div>
+
+<div class="form-group">
+  <label>Quantity</label>
+       <input type= "number" class="form-control" #pass="ngModel" [(ngModel)]="list.quantity" name="quantity"   >
+        <div class="alert alert-danger" *ngIf="pass.invalid && pass.touched">
+           <div *ngIf="pass.errors.required">quantity is Required</div>
+           
+       </div>
+     </div> 
+
+     <!-- <div class="form-group">
+      <label>Issue</label>
+           <input type= "number" class="form-control" #pass="ngModel" [(ngModel)]="list.issue" name="issue"  >
+            <div class="alert alert-danger" *ngIf="pass.invalid && pass.touched">
+               <div *ngIf="pass.errors.required">issue no is Required</div>
+              
+           </div>
+         </div>  -->
+    
+
+         <button type="submit" class="btn btn-primary" (click)="addlib()" value="Submit"  >Update</button>
+
+    </form>
+
+  <!-- {{tp}} -->
+  <!-- <br>
+  <h1>{{librarian | json}}</h1>
+  {{libraryform.value | json}}
+  <br> -->
+  </div>
+

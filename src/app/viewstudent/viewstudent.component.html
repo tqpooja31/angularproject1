@@ -1,0 +1,30 @@
+<!-- {{ stud | json}} -->
+
+<div class="container">
+    
+    <h1 class="text-center"> 
+       View Data</h1>
+          <table class="table table-bordered">
+         <tr>
+             <th>id</th>
+             <th>Name</th>
+             <th>Mobno</th>
+             <th>Email</th>
+             <th> Action </th>
+         </tr>
+         <tbody>
+            
+               <tr *ngFor="let s of stud;let i=index">
+                    <td>{{s.sid}}</td>
+                    <td>{{s.sname}}</td>
+                    <td>{{s.smobno}}</td>
+                     <td>{{s.email}}</td>
+                      
+                     <td>
+                         <button input type="text" class="btn btn-dark" ><a [routerLink]="['/estud',i]">Edit</a></button>&nbsp;
+                         <button input type="text" class="btn btn-danger" (click)="deleteData(i)">Delete</button>
+                         </td>
+                </tr>
+            
+            </tbody>
+         </table>
